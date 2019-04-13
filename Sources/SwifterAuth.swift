@@ -42,9 +42,15 @@ public extension Swifter {
      */
     #if os(macOS)
     func authorize(withCallback callbackURL: URL,
+<<<<<<< HEAD
 						  forceLogin: Bool = false,
 						  success: TokenSuccessHandler?,
 						  failure: FailureHandler? = nil) {
+=======
+                   forceLogin: Bool = false,
+                   success: TokenSuccessHandler?,
+                   failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         self.postOAuthRequestToken(with: callbackURL, success: { token, response in
             var requestToken = token!
             
@@ -78,11 +84,19 @@ public extension Swifter {
     
     #if os(iOS)
     func authorize(withCallback callbackURL: URL,
+<<<<<<< HEAD
 						  presentingFrom presenting: UIViewController?,
 						  forceLogin: Bool = false,
 						  safariDelegate: SFSafariViewControllerDelegate? = nil,
 						  success: TokenSuccessHandler?,
 						  failure: FailureHandler? = nil) {
+=======
+                   presentingFrom presenting: UIViewController?,
+                   forceLogin: Bool = false,
+                   safariDelegate: SFSafariViewControllerDelegate? = nil,
+                   success: TokenSuccessHandler?,
+                   failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         self.postOAuthRequestToken(with: callbackURL, success: { token, response in
             var requestToken = token!
             self.swifterCallbackToken = NotificationCenter.default.addObserver(forName: .swifterCallback, object: nil, queue: .main) { notification in

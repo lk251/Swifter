@@ -33,11 +33,19 @@ public extension Swifter {
     Returns up to 100 of the first retweets of a given tweet.
     */
     func getRetweets(forTweetID id: String,
+<<<<<<< HEAD
 							count: Int? = nil,
 							trimUser: Bool? = nil,
 							tweetMode: TweetMode = .default,
 							success: SuccessHandler? = nil,
 							failure: FailureHandler? = nil) {
+=======
+                     count: Int? = nil,
+                     trimUser: Bool? = nil,
+                     tweetMode: TweetMode = .default,
+                     success: SuccessHandler? = nil,
+                     failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "statuses/retweets/\(id).json"
         var parameters = [String: Any]()
         parameters["count"] ??= count
@@ -69,6 +77,7 @@ public extension Swifter {
     This object contains an array of user IDs for users who have contributed to this status (an example of a status that has been contributed to is this one). In practice, there is usually only one ID in this array. The JSON renders as such "contributors":[8285392].
     */
     func getTweet(for id: String,
+<<<<<<< HEAD
 						 trimUser: Bool? = nil,
 						 includeMyRetweet: Bool? = nil,
 						 includeEntities: Bool? = nil,
@@ -76,6 +85,15 @@ public extension Swifter {
 						 tweetMode: TweetMode = TweetMode.default,
 						 success: SuccessHandler? = nil,
 						 failure: FailureHandler? = nil) {
+=======
+                  trimUser: Bool? = nil,
+                  includeMyRetweet: Bool? = nil,
+                  includeEntities: Bool? = nil,
+                  includeExtAltText: Bool? = nil,
+                  tweetMode: TweetMode = TweetMode.default,
+                  success: SuccessHandler? = nil,
+                  failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "statuses/show.json"
 
         var parameters = [String: Any]()
@@ -95,10 +113,17 @@ public extension Swifter {
     Destroys the status specified by the required ID parameter. The authenticating user must be the author of the specified status. Returns the destroyed status if successful.
     */
     func destroyTweet(forID id: String,
+<<<<<<< HEAD
 							 trimUser: Bool? = nil,
 							 tweetMode: TweetMode = .default,
 							 success: SuccessHandler? = nil,
 							 failure: FailureHandler? = nil) {
+=======
+                      trimUser: Bool? = nil,
+                      tweetMode: TweetMode = .default,
+                      success: SuccessHandler? = nil,
+                      failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "statuses/destroy/\(id).json"
 
         var parameters = [String: Any]()
@@ -134,6 +159,7 @@ public extension Swifter {
     */
 
     func postTweet(status: String,
+<<<<<<< HEAD
 						  inReplyToStatusID: String? = nil,
 						  coordinate: (lat: Double, long: Double)? = nil,
 						  autoPopulateReplyMetadata: Bool? = nil,
@@ -146,6 +172,20 @@ public extension Swifter {
 						  tweetMode: TweetMode = TweetMode.default,
 						  success: SuccessHandler? = nil,
 						  failure: FailureHandler? = nil) {
+=======
+                   inReplyToStatusID: String? = nil,
+                   coordinate: (lat: Double, long: Double)? = nil,
+                   autoPopulateReplyMetadata: Bool? = nil,
+                   excludeReplyUserIds: Bool? = nil,
+                   placeID: Double? = nil,
+                   displayCoordinates: Bool? = nil,
+                   trimUser: Bool? = nil,
+                   mediaIDs: [String] = [],
+                   attachmentURL: URL? = nil,
+                   tweetMode: TweetMode = TweetMode.default,
+                   success: SuccessHandler? = nil,
+                   failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
 
         let path: String = "statuses/update.json"
 
@@ -177,6 +217,7 @@ public extension Swifter {
     }
 
     func postTweet(status: String,
+<<<<<<< HEAD
 						  media: Data,
 						  inReplyToStatusID: String? = nil,
 						  autoPopulateReplyMetadata: Bool? = nil,
@@ -188,6 +229,19 @@ public extension Swifter {
 						  tweetMode: TweetMode = TweetMode.default,
 						  success: SuccessHandler? = nil,
 						  failure: FailureHandler? = nil) {
+=======
+                   media: Data,
+                   inReplyToStatusID: String? = nil,
+                   autoPopulateReplyMetadata: Bool? = nil,
+                   excludeReplyUserIds: Bool? = nil,
+                   coordinate: (lat: Double, long: Double)? = nil,
+                   placeID: Double? = nil,
+                   displayCoordinates: Bool? = nil,
+                   trimUser: Bool? = nil,
+                   tweetMode: TweetMode = TweetMode.default,
+                   success: SuccessHandler? = nil,
+                   failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path: String = "statuses/update_with_media.json"
 
         var parameters = [String: Any]()
@@ -247,9 +301,15 @@ public extension Swifter {
     - https://dev.twitter.com/rest/reference/post/media/upload
     */
     func postMedia(_ media: Data,
+<<<<<<< HEAD
 						  additionalOwners: UsersTag? = nil,
 						  success: SuccessHandler? = nil,
 						  failure: FailureHandler? = nil) {
+=======
+                   additionalOwners: UsersTag? = nil,
+                   success: SuccessHandler? = nil,
+                   failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path: String = "media/upload.json"
         var parameters = [String: Any]()
         parameters["media"] = media
@@ -273,10 +333,17 @@ public extension Swifter {
     Returns Tweets (1: the new tweet)
     */
     func retweetTweet(forID id: String,
+<<<<<<< HEAD
 							 trimUser: Bool? = nil,
 							 tweetMode: TweetMode = .default,
 							 success: SuccessHandler? = nil,
 							 failure: FailureHandler? = nil) {
+=======
+                      trimUser: Bool? = nil,
+                      tweetMode: TweetMode = .default,
+                      success: SuccessHandler? = nil,
+                      failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "statuses/retweet/\(id).json"
 
         var parameters = [String: Any]()
@@ -299,10 +366,17 @@ public extension Swifter {
      Returns Tweets (1: the original tweet)
      */
     func unretweetTweet(forID id: String,
+<<<<<<< HEAD
 							   trimUser: Bool? = nil,
 							   tweetMode: TweetMode = .default,
 							   success: SuccessHandler? = nil,
 							   failure: FailureHandler? = nil) {
+=======
+						trimUser: Bool? = nil,
+						tweetMode: TweetMode = .default,
+						success: SuccessHandler? = nil,
+						failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "statuses/unretweet/\(id).json"
         
         var parameters = [String: Any]()
@@ -322,6 +396,7 @@ public extension Swifter {
     While this endpoint allows a bit of customization for the final appearance of the embedded Tweet, be aware that the appearance of the rendered Tweet may change over time to be consistent with Twitter's Display Requirements. Do not rely on any class or id parameters to stay constant in the returned markup.
     */
     func oembedInfo(for url: URL,
+<<<<<<< HEAD
 						   maxWidth: Int? = nil,
 						   hideMedia: Bool? = nil,
 						   hideThread: Bool? = nil,
@@ -331,6 +406,17 @@ public extension Swifter {
 						   lang: String? = nil,
 						   success: SuccessHandler? = nil,
 						   failure: FailureHandler? = nil) {
+=======
+                    maxWidth: Int? = nil,
+                    hideMedia: Bool? = nil,
+                    hideThread: Bool? = nil,
+                    omitScript: Bool? = nil,
+                    align: String? = nil,
+                    related: String? = nil,
+                    lang: String? = nil,
+                    success: SuccessHandler? = nil,
+                    failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "oembed"
 
         var parameters = [String: Any]()
@@ -356,11 +442,19 @@ public extension Swifter {
     This method offers similar data to GET statuses/retweets/:id and replaces API v1's GET statuses/:id/retweeted_by/ids method.
     */
     func tweetRetweeters(for id: String,
+<<<<<<< HEAD
 								count: Int? = nil,
 								cursor: String? = nil,
 								stringifyIDs: Bool? = nil,
 								success: CursorSuccessHandler? = nil,
 								failure: FailureHandler? = nil) {
+=======
+                         count: Int? = nil,
+                         cursor: String? = nil,
+                         stringifyIDs: Bool? = nil,
+                         success: CursorSuccessHandler? = nil,
+                         failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "statuses/retweeters/ids.json"
 
         var parameters = [String: Any]()
@@ -380,6 +474,7 @@ public extension Swifter {
     Returns fully-hydrated tweet objects for up to 100 tweets per request, as specified by comma-separated values passed to the id parameter. This method is especially useful to get the details (hydrate) a collection of Tweet IDs. GET statuses/show/:id is used to retrieve a single tweet object.
     */
     func lookupTweets(for tweetIDs: [String],
+<<<<<<< HEAD
 							 includeEntities: Bool? = nil,
 							 trimUser: Bool? = nil,
 							 map: Bool? = nil,
@@ -387,6 +482,15 @@ public extension Swifter {
 							 tweetMode: TweetMode = .default,
 							 success: SuccessHandler? = nil,
 							 failure: FailureHandler? = nil) {
+=======
+                      includeEntities: Bool? = nil,
+                      trimUser: Bool? = nil,
+                      map: Bool? = nil,
+                      includeExtAltText: Bool? = nil,
+                      tweetMode: TweetMode = .default,
+                      success: SuccessHandler? = nil,
+                      failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "statuses/lookup.json"
 
         var parameters = [String: Any]()

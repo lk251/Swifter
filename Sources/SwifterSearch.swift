@@ -38,6 +38,7 @@ public extension Swifter {
 
      */
     func searchTweet(using query: String,
+<<<<<<< HEAD
 							geocode: String? = nil,
 							lang: String? = nil,
 							locale: String? = nil,
@@ -51,6 +52,21 @@ public extension Swifter {
 							tweetMode: TweetMode = TweetMode.default,
 							success: SearchResultHandler? = nil,
 							failure: @escaping FailureHandler) {
+=======
+                     geocode: String? = nil,
+                     lang: String? = nil,
+                     locale: String? = nil,
+                     resultType: String? = nil,
+                     count: Int? = nil,
+                     until: String? = nil,
+                     sinceID: String? = nil,
+                     maxID: String? = nil,
+                     includeEntities: Bool? = nil,
+                     callback: String? = nil,
+                     tweetMode: TweetMode = TweetMode.default,
+                     success: SearchResultHandler? = nil,
+                     failure: @escaping FailureHandler) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "search/tweets.json"
 
         var parameters = [String: Any]()

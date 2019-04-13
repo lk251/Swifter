@@ -26,8 +26,9 @@
 import Foundation
 
 public extension Swifter {
-
+    
     /**
+<<<<<<< HEAD
     GET    users/suggestions/:slug
 
     Access the users in a given category of the Twitter suggested user list.
@@ -38,17 +39,30 @@ public extension Swifter {
 								   lang: String? = nil,
 								   success: SuccessHandler? = nil,
 								   failure: FailureHandler? = nil) {
+=======
+     GET    users/suggestions/:slug
+     
+     Access the users in a given category of the Twitter suggested user list.
+     
+     It is recommended that applications cache this data for no more than one hour.
+     */
+    func getUserSuggestions(slug: String,
+                            lang: String? = nil,
+                            success: SuccessHandler? = nil,
+                            failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "users/suggestions/\(slug).json"
-
+        
         var parameters = [String: Any]()
         parameters["lang"] ??= lang
-
+        
         self.getJSON(path: path, baseURL: .api, parameters: parameters, success: { json, _ in
-			success?(json)
-		}, failure: failure)
+            success?(json)
+        }, failure: failure)
     }
-
+    
     /**
+<<<<<<< HEAD
     GET    users/suggestions
 
     Access to Twitter's suggested user list. This returns the list of suggested user categories. The category can be used in GET users/suggestions/:slug to get the users in that category.
@@ -56,17 +70,27 @@ public extension Swifter {
     func getUsersSuggestions(lang: String? = nil,
 									success: SuccessHandler? = nil,
 									failure: FailureHandler? = nil) {
+=======
+     GET    users/suggestions
+     
+     Access to Twitter's suggested user list. This returns the list of suggested user categories. The category can be used in GET users/suggestions/:slug to get the users in that category.
+     */
+    func getUsersSuggestions(lang: String? = nil,
+                             success: SuccessHandler? = nil,
+                             failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "users/suggestions.json"
-
+        
         var parameters = [String: Any]()
         parameters["lang"] ??= lang
-
+        
         self.getJSON(path: path, baseURL: .api, parameters: parameters, success: { json, _ in
-			success?(json)
-		}, failure: failure)
+            success?(json)
+        }, failure: failure)
     }
-
+    
     /**
+<<<<<<< HEAD
     GET    users/suggestions/:slug/members
 
     Access the users in a given category of the Twitter suggested user list and return their most recent status if they are not a protected user.
@@ -74,10 +98,19 @@ public extension Swifter {
     func getUsersSuggestions(for slug: String,
 									success: SuccessHandler? = nil,
 									failure: FailureHandler? = nil) {
+=======
+     GET    users/suggestions/:slug/members
+     
+     Access the users in a given category of the Twitter suggested user list and return their most recent status if they are not a protected user.
+     */
+    func getUsersSuggestions(for slug: String,
+                             success: SuccessHandler? = nil,
+                             failure: FailureHandler? = nil) {
+>>>>>>> 39541c9fb3312771fd851bde2d6a89886fbe3851
         let path = "users/suggestions/\(slug)/members.json"
         self.getJSON(path: path, baseURL: .api, parameters: [:], success: { json, _ in
-			success?(json)
-		}, failure: failure)
+            success?(json)
+        }, failure: failure)
     }
     
 }
