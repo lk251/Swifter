@@ -51,7 +51,7 @@ public extension Swifter {
                      tweetMode: TweetMode = TweetMode.default,
                      success: SearchResultHandler? = nil,
                      failure: @escaping FailureHandler) {
-        let path = "search/tweets.json"
+        let path = "tweets/search/recent"
 
         var parameters = [String: Any]()
         parameters["q"] = query
