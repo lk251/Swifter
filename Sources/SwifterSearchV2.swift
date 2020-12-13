@@ -54,7 +54,7 @@ public extension Swifter {
         let path = "tweets/search/recent"
 
         var parameters = [String: Any]()
-        parameters["q"] = query
+        parameters["query"] = query
         parameters["geocode"] ??= geocode
         parameters["lang"] ??= lang
         parameters["locale"] ??= locale
