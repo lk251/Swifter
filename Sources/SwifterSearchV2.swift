@@ -49,7 +49,7 @@ public extension Swifter {
                      includeEntities: Bool? = nil,
                      callback: String? = nil,
                      tweetMode: TweetMode = TweetMode.default,
-                     success: SearchResultHandler? = nil,
+                     success: SuccessHandler? = nil,
                      failure: @escaping FailureHandler) {
         let path = "tweets/search/recent"
 
@@ -68,43 +68,7 @@ public extension Swifter {
         parameters["tweet_mode"] ??= tweetMode.stringValue
 
         self.getJSON(path: path, baseURL: .api2, parameters: parameters, success: { json, _ in
-            success?(json["statuses"], json["search_metadata"])
-            }, failure: failure)
+            success?(json)
+        }, failure: failure)
     }
-    
-    func printSearchTweetRequest(using query: String,
-                     geocode: String? = nil,
-                     lang: String? = nil,
-                     locale: String? = nil,
-                     resultType: String? = nil,
-                     count: Int? = nil,
-                     until: String? = nil,
-                     sinceID: String? = nil,
-                     maxID: String? = nil,
-                     includeEntities: Bool? = nil,
-                     callback: String? = nil,
-                     tweetMode: TweetMode = TweetMode.default,
-                     success: SearchResultHandler? = nil,
-                     failure: @escaping FailureHandler) {
-        let path = "search/tweets.json"
-
-        var parameters = [String: Any]()
-        parameters["q"] = query
-        parameters["geocode"] ??= geocode
-        parameters["lang"] ??= lang
-        parameters["locale"] ??= locale
-        parameters["result_type"] ??= resultType
-        parameters["count"] ??= count
-        parameters["until"] ??= until
-        parameters["since_id"] ??= sinceID
-        parameters["max_id"] ??= maxID
-        parameters["include_entities"] ??= includeEntities
-        parameters["callback"] ??= callback
-        parameters["tweet_mode"] ??= tweetMode.stringValue
-
-        self.getJSON(path: path, baseURL: .api, parameters: parameters, success: { json, _ in
-            success?(json["statuses"], json["search_metadata"])
-            }, failure: failure)
-    }
-    
 }
