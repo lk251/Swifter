@@ -140,6 +140,8 @@ internal class OAuthClient: SwifterClientProtocol, SwifterAppProtocol {
         request.successHandler = success
         request.failureHandler = failure
         request.dataEncoding = self.dataEncoding
+        print("request parameters:")
+        print(request.parameters)
         request.start()
         return request
     }
