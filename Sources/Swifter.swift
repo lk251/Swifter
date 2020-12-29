@@ -40,6 +40,7 @@ extension Notification.Name {
 public enum TwitterURL {
     
     case api
+    case api2
     case upload
     case stream
     case publish
@@ -50,6 +51,7 @@ public enum TwitterURL {
     var url: URL {
         switch self {
         case .api:          return URL(string: "https://api.twitter.com/1.1/")!
+        case .api2:         return URL(string: "https://api.twitter.com/2/")!
         case .upload:       return URL(string: "https://upload.twitter.com/1.1/")!
         case .stream:       return URL(string: "https://stream.twitter.com/1.1/")!
         case .userStream:   return URL(string: "https://userstream.twitter.com/1.1/")!
