@@ -38,6 +38,8 @@ public extension Swifter {
 
      */
     func searchTweetV2(using query: String,
+                     tweetFields: String? = nil,
+                     expansions: String? = nil,
                      geocode: String? = nil,
                      lang: String? = nil,
                      locale: String? = nil,
@@ -55,6 +57,8 @@ public extension Swifter {
 
         var parameters = [String: Any]()
         parameters["query"] = query
+        parameters["tweet.fields"] ??= tweetFields
+        parameters["expansions"] ??= expansions
         parameters["geocode"] ??= geocode
         parameters["lang"] ??= lang
         parameters["locale"] ??= locale
