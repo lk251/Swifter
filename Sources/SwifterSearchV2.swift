@@ -44,7 +44,7 @@ public extension Swifter {
                      lang: String? = nil,
                      locale: String? = nil,
                      resultType: String? = nil,
-                     max_results: Int? = nil,
+                     maxResults: Int? = nil,
                      until: String? = nil,
                      sinceID: String? = nil,
                      maxID: String? = nil,
