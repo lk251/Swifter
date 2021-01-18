@@ -44,7 +44,7 @@ public extension Swifter {
                      lang: String? = nil,
                      locale: String? = nil,
                      resultType: String? = nil,
-                     count: Int? = nil,
+                     max_results: Int? = nil,
                      until: String? = nil,
                      sinceID: String? = nil,
                      maxID: String? = nil,
@@ -63,7 +63,7 @@ public extension Swifter {
         parameters["lang"] ??= lang
         parameters["locale"] ??= locale
         parameters["result_type"] ??= resultType
-        parameters["count"] ??= count
+        parameters["max_results"] ??= maxResults
         parameters["until"] ??= until
         parameters["since_id"] ??= sinceID
         parameters["max_id"] ??= maxID
