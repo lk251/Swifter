@@ -46,7 +46,7 @@ public extension Swifter {
                      locale: String? = nil,
                      resultType: String? = nil,
                      maxResults: Int? = nil,
-                     paginationToken: String? = nil,
+                     nextToken: String? = nil,
                      until: String? = nil,
                      sinceID: String? = nil,
                      maxID: String? = nil,
@@ -67,7 +67,7 @@ public extension Swifter {
         parameters["locale"] ??= locale
         parameters["result_type"] ??= resultType
         parameters["max_results"] ??= maxResults
-        parameters["pagination_token"] ??= paginationToken
+        parameters["next_token"] ??= nextToken
         parameters["until"] ??= until
         parameters["since_id"] ??= sinceID
         parameters["max_id"] ??= maxID
