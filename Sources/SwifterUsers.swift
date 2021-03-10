@@ -354,7 +354,7 @@ public extension Swifter {
                      count: Int? = nil,
                      includeEntities: Bool? = nil,
                      success: SuccessHandler? = nil,
-                     dataSuccess: DataSuccessHandler? = nil,
+                     onlyDataSuccess: OnlyDataSuccessHandler? = nil,
                      failure: FailureHandler? = nil) {
         let path = "users/search.json"
 
@@ -366,7 +366,7 @@ public extension Swifter {
 
 		self.getJSON(path: path, baseURL: .api, parameters: parameters, success: { json, _ in
 			success?(json)
-		}, failure: failure)
+        }, dataSuccess: {data, _ in onlyDataSuccess?(data)}, failure: failure)
     }
 
     /**

@@ -90,6 +90,7 @@ public class Swifter {
     // MARK: - Types
     
     public typealias SuccessHandler = (JSON) -> Void
+    public typealias OnlyDataSuccessHandler = (Data) -> Void
     public typealias CursorSuccessHandler = (JSON, _ previousCursor: String?, _ nextCursor: String?) -> Void
     public typealias JSONSuccessHandler = (JSON, _ response: HTTPURLResponse) -> Void
     public typealias DataSuccessHandler = (Data, _ response: HTTPURLResponse) -> Void
@@ -242,10 +243,11 @@ public class Swifter {
                           uploadProgress: HTTPRequest.UploadProgressHandler? = nil,
                           downloadProgress: JSONSuccessHandler? = nil,
                           success: JSONSuccessHandler?,
+                          dataSuccess: DataSuccessHandler?,
                           failure: HTTPRequest.FailureHandler?) -> HTTPRequest {
         return self.jsonRequest(path: path, baseURL: baseURL, method: .GET, parameters: parameters,
                                 uploadProgress: uploadProgress, downloadProgress: downloadProgress,
-                                success: success, failure: failure)
+                                success: success, dataSuccess: dataSuccess, failure: failure)
     }
     
     @discardableResult
