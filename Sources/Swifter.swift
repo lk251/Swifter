@@ -243,7 +243,7 @@ public class Swifter {
                           uploadProgress: HTTPRequest.UploadProgressHandler? = nil,
                           downloadProgress: JSONSuccessHandler? = nil,
                           success: JSONSuccessHandler?,
-                          dataSuccess: DataSuccessHandler?,
+                          dataSuccess: DataSuccessHandler? = nil,
                           failure: HTTPRequest.FailureHandler?) -> HTTPRequest {
         return self.jsonRequest(path: path, baseURL: baseURL, method: .GET, parameters: parameters,
                                 uploadProgress: uploadProgress, downloadProgress: downloadProgress,
