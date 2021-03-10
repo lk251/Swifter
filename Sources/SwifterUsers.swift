@@ -354,6 +354,7 @@ public extension Swifter {
                      count: Int? = nil,
                      includeEntities: Bool? = nil,
                      success: SuccessHandler? = nil,
+                     dataSuccess: DataSuccessHandler? = nil,
                      failure: FailureHandler? = nil) {
         let path = "users/search.json"
 
