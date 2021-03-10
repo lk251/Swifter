@@ -161,7 +161,7 @@ public class Swifter {
                               uploadProgress: HTTPRequest.UploadProgressHandler? = nil,
                               downloadProgress: JSONSuccessHandler? = nil,
                               success: JSONSuccessHandler? = nil,
-			      dataSuccess: DataSuccessHandler? = nil
+			      dataSuccess: DataSuccessHandler? = nil,
                               failure: HTTPRequest.FailureHandler? = nil) -> HTTPRequest {
         
         let jsonDownloadProgressHandler: HTTPRequest.DownloadProgressHandler = { [weak self] data, _, _, response in
