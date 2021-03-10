@@ -172,8 +172,6 @@ public class Swifter {
         }
         
         let jsonSuccessHandler: HTTPRequest.SuccessHandler = { data, response in
-            print(data)
-            dataSuccess == nil ? print("dataSuccess is nil") : print("dataSuccess is not nil")
             DispatchQueue.global(qos: .utility).async {
                 do {
                     var jsonResult = JSON("{}")
