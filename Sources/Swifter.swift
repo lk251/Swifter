@@ -187,6 +187,7 @@ public class Swifter {
                     DispatchQueue.main.async {
                         if case 200...299 = response.statusCode, data.isEmpty {
                             success?(JSON("{}"), response)
+                            dataSuccess?(Data(), response)
                         } else {
                             failure?(error)
                         }
