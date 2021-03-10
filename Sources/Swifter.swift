@@ -161,6 +161,7 @@ public class Swifter {
                               uploadProgress: HTTPRequest.UploadProgressHandler? = nil,
                               downloadProgress: JSONSuccessHandler? = nil,
                               success: JSONSuccessHandler? = nil,
+			      dataSuccess: DataSuccessHandler? = nil
                               failure: HTTPRequest.FailureHandler? = nil) -> HTTPRequest {
         
         let jsonDownloadProgressHandler: HTTPRequest.DownloadProgressHandler = { [weak self] data, _, _, response in
@@ -174,6 +175,7 @@ public class Swifter {
                 do {
                     let jsonResult = try JSON.parse(jsonData: data)
                     DispatchQueue.main.async {
+			dataSuccess?(data, response)
                         success?(jsonResult, response)
                     }
                 } catch {
