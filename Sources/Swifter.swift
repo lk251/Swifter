@@ -173,14 +173,15 @@ public class Swifter {
         let jsonSuccessHandler: HTTPRequest.SuccessHandler = { data, response in
             DispatchQueue.global(qos: .utility).async {
                 do {
+                    var jsonResult = JSON("{}")
+                    if success != nil {
+                        jsonResult = try JSON.parse(jsonData: data)
+                    }
                     DispatchQueue.main.async {
-			if success != nil {
-			let jsonResult = try JSON.parse(jsonData: data)
-			success?(try JSON.parse(jsonData: data), response)
-			} else {
-			dataSuccess?(data, response)			
-			}
-			
+                        if success != nil {
+                            success?(jsonResult, response)
+                        }
+                        dataSuccess?(data, response)
                     }
                 } catch {
                     DispatchQueue.main.async {
