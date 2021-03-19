@@ -54,6 +54,7 @@ public extension Swifter {
                      callback: String? = nil,
                      tweetMode: TweetMode = TweetMode.default,
                      success: SuccessHandler? = nil,
+                     onlyDataSuccess: OnlyDataSuccessHandler? = nil,
                      failure: @escaping FailureHandler) {
         let path = "tweets/search/recent"
 
@@ -77,6 +78,6 @@ public extension Swifter {
 
         self.getJSON(path: path, baseURL: .api2, parameters: parameters, success: { json, _ in
             success?(json)
-        }, failure: failure)
+        }, dataSuccess: {data, _ in onlyDataSuccess?(data)}, failure: failure)
     }
 }
